@@ -18,8 +18,12 @@ class AllQuotes extends Component {
     });
   }
   render() {
+    const { quotes } = this.state;
     return (
-    <h1>{this.state.quotes}</h1>
+    <div>
+    {quotes.map(q => 
+    <p>{q}</p>)}
+    </div>
     );
   }
 }
@@ -27,8 +31,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Link to="/allquotes">ASDF</Link>
-        <Link to="/submit">ASDF</Link>
+        <Link to="/allquotes">All Quotes</Link>{" "}
+        <Link to="/newquote">Submit Quote</Link>{" "}
         <h1>Fun Movie Quotes Page</h1>
         <Switch>
           <Route exact path="/allquotes" component={AllQuotes} />
